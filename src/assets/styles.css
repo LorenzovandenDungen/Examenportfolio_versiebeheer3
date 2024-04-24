@@ -286,22 +286,32 @@ button[type="submit"]:hover {
     margin-bottom: 20px;
 }
 .offerte-container {
-    background-color: #f8f9fa;
     padding: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
 }
 
 .offerte-content {
     max-width: 800px;
-    margin: auto;
     background-color: #fff;
     border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .offerte-content h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
+}
+
+.offerte-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .offerte-form .form-group {
@@ -310,6 +320,7 @@ button[type="submit"]:hover {
 
 .offerte-form label {
     font-size: 18px;
+    color: #333;
 }
 
 .offerte-form input[type="text"],
@@ -318,9 +329,13 @@ button[type="submit"]:hover {
 .offerte-form textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #ced4da;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+.offerte-form textarea {
+    height: 150px;
 }
 
 .offerte-form button {

@@ -2,7 +2,8 @@
   <div>
     <div class="offerte-container">
       <div class="offerte-content">
-        <h1>Website Offerte Aanvragen</h1>
+        <h1>Offerte Aanvragen</h1>
+        <p>Vul onderstaand formulier in en wij nemen zo spoedig mogelijk contact met u op.</p>
         <form class="offerte-form" @submit.prevent="submitForm">
           <div class="form-group">
             <label for="naam">Naam:</label>
@@ -44,6 +45,6 @@ const submitForm = () => {
 }
 </script>
 
-<style scoped>
-@import '../assets/styles.css';
+<style>
+@import '../assets/styles.css/';
 </style>
