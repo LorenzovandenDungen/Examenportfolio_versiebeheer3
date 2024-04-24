@@ -18,7 +18,8 @@
 export default {
   methods: {
     goToContact() {
-      // Logic to navigate to the contact page
+      // Navigeer naar de contactpagina
+      this.$router.push('/contact');
     }
   }
 }
