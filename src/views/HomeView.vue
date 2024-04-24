@@ -63,30 +63,7 @@ export default {
 };
 </script>
 
-<style scoped>
-
-.main-banner {
-  background-image: url('../assets/Foto_main_banner.png');
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
-}
-
-.content-section {
-  padding: 2rem 0;
-}
-
-.image-block {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #343a40; /* or any color you prefer */
-}
+<style>
+@import '../assets/styles.css';
 
 </style>
