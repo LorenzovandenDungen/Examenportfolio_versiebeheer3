@@ -1,36 +1,39 @@
 <template>
   <div class="payment-container">
     <h1>Veilig Betalen</h1>
+    <div class="payment-methods">
+      <button class="method-tab">Card</button>
+      <button class="method-tab">iDEAL</button>
+      <button class="method-tab">PayPal</button>
+    </div>
     <form @submit.prevent="processPayment" class="payment-form">
       <div class="form-group">
         <label for="cardNumber">Creditcardnummer</label>
-        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+        <input type="text" id="cardNumber" class="form-control" placeholder="1234 1234 1234 1234" required>
       </div>
       <div class="form-group">
         <label for="expiryDate">Vervaldatum</label>
-        <input type="text" id="expiryDate" class="form-control" placeholder="MM/JJ" required>
+        <input type="text" id="expiryDate" class="form-control" placeholder="MM / JJ" required>
       </div>
       <div class="form-group">
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" class="form-control" placeholder="123" required>
+        <label for="cvv">CVC</label>
+        <input type="text" id="cvv" class="form-control" placeholder="CVC" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" class="form-control">
+          <option>United States</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="postalCode">Postal code</label>
+        <input type="text" id="postalCode" class="form-control" placeholder="90210" required>
       </div>
       <button type="submit" class="btn btn-primary">Betalen</button>
     </form>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'PaymentView',
-  methods: {
-    processPayment() {
-      // Hier zou je logica toevoegen om de betaling te verwerken
-      // Dit kan het verzenden van betalingsgegevens naar een betalingsgateway omvatten
-      // Vergeet niet om de gebruiker feedback te geven over het resultaat van de betaling
-    }
-  }
-};
-</script>
 <style>
 @import '../assets/styles.css/';
 </style>
