@@ -16,7 +16,7 @@
             <li>✔ Domeinnaam</li>
             <li>✔ 100% jouw eigendom</li>
           </ul>
-          <button class="buy-button">PROBEER NU</button>
+          <button class="buy-button" @click="navigateToPayment">PROBEER NU</button> <!-- Koppel deze knop aan de betaalpagina -->
         </div>
         <div class="price-box">
           <h2 class="package-title">PREMIUM</h2>
@@ -28,7 +28,7 @@
             <li>✔ Domeinnaam</li>
             <li>✔ 100% jouw eigendom</li>
           </ul>
-          <button class="buy-button">PROBEER NU</button>
+          <button class="buy-button" @click="navigateToPayment">PROBEER NU</button> <!-- Koppel deze knop aan de betaalpagina -->
         </div>
         <div class="price-box">
           <h2 class="package-title">PRO</h2>
@@ -42,7 +42,7 @@
             <li>✔ Korting op SEO tekst</li>
             <li>✔ Slider op homepage</li>
           </ul>
-          <button class="buy-button">PROBEER NU</button>
+          <button class="buy-button" @click="navigateToPayment">PROBEER NU</button> <!-- Koppel deze knop aan de betaalpagina -->
         </div>
       </div>
     </main>
@@ -54,7 +54,13 @@
 </template>
 
 <script setup>
-// Import your components or any scripts if needed
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const navigateToPayment = () => {
+  router.push('/betalen'); // Hier wordt genavigeerd naar de betaalpagina
+};
 </script>
 
 <style scoped>
