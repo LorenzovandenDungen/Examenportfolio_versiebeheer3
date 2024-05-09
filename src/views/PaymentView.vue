@@ -31,46 +31,6 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.payment-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.payment-form .form-group {
-  margin-bottom: 20px;
-}
-
-.payment-form label {
-  display: block;
-  font-weight: bold;
-}
-
-.payment-form .form-control {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.payment-form button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.payment-form button:hover {
-  background-color: #0056b3;
-}
+<style>
+@import '../assets/styles.css/';
 </style>
