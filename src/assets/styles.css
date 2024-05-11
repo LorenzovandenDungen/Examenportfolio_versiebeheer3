@@ -1,8 +1,8 @@
+/* Algemene stijlen */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     background: #f4f4f4;
@@ -10,24 +10,21 @@ body {
     line-height: 1.6;
 }
 
-/* Main Banner */
+/* Hoofdbanner */
 .main-banner {
-    background-image: url('../assets/Foto_main_banner.png');
-    background-size: cover;
-    background-position: center;
+    background: url('../assets/Foto_main_banner.png') center/cover;
     min-height: 400px;
 }
 
-/* General Content Section */
+/* Algemene inhoudsectie */
 .content-section {
     padding: 2rem 0;
 }
 
-/* Image Block */
+/* Afbeeldingsblok */
 .image-block {
     height: 200px;
-    background-size: cover;
-    background-position: center;
+    background: center/cover;
 }
 
 /* Footer */
@@ -42,14 +39,14 @@ body {
     border-top: 1px solid #ccc;
 }
 
-/* Tarieven View */
+/* Tarievenweergave */
 .tarieven-view {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Content in Tarieven View */
+/* Inhoud in tarievenweergave */
 .content {
     flex: 1;
     text-align: center;
@@ -61,12 +58,12 @@ body {
     align-items: center;
 }
 
-/* Title */
+/* Titel */
 .title {
     margin-bottom: 1em;
 }
 
-/* Price Container */
+/* Prijscontainer */
 .price-container {
     display: flex;
     justify-content: center;
@@ -76,7 +73,7 @@ body {
     margin: 0 auto;
 }
 
-/* Price Box */
+/* Prijsvak */
 .price-box {
     border: 1px solid #ccc;
     padding: 2em 1em;
@@ -89,7 +86,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Package Title */
+/* Pakketnaam */
 .package-title {
     margin: 0;
     font-size: 1.25em;
@@ -100,7 +97,7 @@ body {
     width: 100%;
 }
 
-/* Price */
+/* Prijs */
 .price {
     font-size: 2em;
     font-weight: bold;
@@ -109,7 +106,7 @@ body {
     width: 100%;
 }
 
-/* Price Box List */
+/* Lijst in prijsvak */
 .price-box ul {
     list-style: none;
     padding: 0;
@@ -118,13 +115,13 @@ body {
     width: 100%;
 }
 
-/* Price Box List Item */
+/* Item in prijsvaklijst */
 .price-box li {
     margin-bottom: 0.5em;
     font-size: 1em;
 }
 
-/* Buy Button */
+/* Koopknop */
 .buy-button {
     background-color: #4CAF50;
     padding: 10px 20px;
@@ -141,19 +138,19 @@ body {
     background-color: #45a049;
 }
 
-/* Footer Content */
+/* Footerinhoud */
 .footer-content {
     margin: 0;
 }
 
-/* Vertical Container */
+/* Verticale container */
 .vertical-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Navigation */
+/* Navigatie */
 nav .nav-list {
     display: flex;
     justify-content: space-between;
@@ -191,65 +188,60 @@ nav .nav-list li a.active::after {
     border-top: 10px solid black;
 }
 
-/* Main Content */
+/* Hoofdinhoud */
 .main-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    alignItems: center;
+    align-items: center;
     padding: 20px;
     text-align: center;
 }
 
-/* Button Container */
+/* Container voor knop */
 .button-container {
     margin-top: 2rem;
 }
 
-/* Contact View */
+/* Contactweergave */
 .contact-view {
     display: flex;
-    flexDirection: column;
+    flex-direction: column;
 }
 
-/* Contact Content */
+/* Contactinhoud */
 .contact-content {
     display: flex;
-    justifyContent: space-between;
-    marginTop: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-/* Contact Info, Form */
+/* Contactinfo, formulier */
 .contact-info, .contact-form {
     width: 50%;
     padding: 20px;
 }
 
-/* Form Row */
+/* Rij in formulier */
 .form-row {
     display: flex;
-    justifyContent: space-between;
+    justify-content: space-between;
 }
 
-/* Form Field */
+/* Formulier veld */
 .form-field {
-    marginBottom: 20px;
+    margin-bottom: 20px;
     flex: 1;
 }
 
-/* Half-Width Form Field */
-.half-width {
-    marginRight: 10px;
-}
-
-/* Form Field Label */
+/* Formulierlabel */
 .form-field label {
     display: block;
-    marginBottom: 5px;
+    margin-bottom: 5px;
 }
 
-/* Form Inputs */
+/* Formulierinvoer */
 .form-field input[type="text"],
 .form-field input[type="email"],
 .form-field input[type="tel"],
@@ -257,70 +249,70 @@ nav .nav-list li a.active::after {
 .form-field textarea {
     width: 100%;
     padding: 10px;
-    marginBottom: 10px;
+    margin-bottom: 10px;
     border: 1px solid #CCC;
 }
 
-/* Text Area */
+/* Tekstgebied */
 .form-field textarea {
     height: 150px;
 }
 
-/* Submit Button */
+/* Verzendknop */
 button[type="submit"] {
     width: 100%;
     padding: 15px 20px;
-    backgroundColor: #333;
+    background-color: #333;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    backgroundColor: #444;
+    background-color: #444;
 }
 
-/* Information Text */
+/* Informatietekst */
 .info {
-    marginBottom: 20px;
+    margin-bottom: 20px;
 }
 
-/* Offer View */
+/* Offerteweergave */
 .offerte-container {
     padding: 50px 0;
-    minHeight: 100vh;
+    min-height: 100vh;
     display: flex;
-    justifyContent: center;
-    alignItems: center;
-    backgroundColor: #f9f9f9;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
 }
 
 .offerte-content {
-    maxWidth: 800px;
-    backgroundColor: #fff;
-    borderRadius: 8px;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
     padding: 40px;
-    boxShadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .offerte-content h1 {
-    fontSize: 32px;
-    marginBottom: 20px;
+    font-size: 32px;
+    margin-bottom: 20px;
     color: #333;
 }
 
 .offerte-content p {
-    fontSize: 18px;
+    font-size: 18px;
     color: #666;
-    marginBottom: 30px;
+    margin-bottom: 30px;
 }
 
 .offerte-form .form-group {
-    marginBottom: 20px;
+    margin-bottom: 20px;
 }
 
 .offerte-form label {
-    fontSize: 18px;
+    font-size: 18px;
     color: #333;
 }
 
@@ -331,8 +323,8 @@ button[type="submit"]:hover {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
-    borderRadius: 5px;
-    fontSize: 16px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .offerte-form textarea {
@@ -340,33 +332,33 @@ button[type="submit"]:hover {
 }
 
 .offerte-form button {
-    backgroundColor: #007bff;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    borderRadius: 5px;
+    border-radius: 5px;
     padding: 15px 30px;
-    fontSize: 18px;
+    font-size: 18px;
     cursor: pointer;
 }
 
 .offerte-form button:hover {
-    backgroundColor: #0056b3;
+    background-color: #0056b3;
 }
 
-/* Payment Display */
+/* Betaalweergave */
 .payment-container {
     width: 100%;
-    maxWidth: 400px;
+    max-width: 400px;
     background: #fff;
     padding: 20px;
-    boxShadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: auto;
 }
 
 .payment-methods {
     display: flex;
-    justifyContent: space-between;
-    marginBottom: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .method-tab {
@@ -374,30 +366,30 @@ button[type="submit"]:hover {
     background: #f0f0f0;
     border: none;
     cursor: pointer;
-    flexGrow: 1;
+    flex-grow: 1;
 }
 
 .form-group {
-    marginBottom: 10px;
+    margin-bottom: 10px;
 }
 
 .form-control {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    borderRadius: 4px;
+    border-radius: 4px;
 }
 
 .btn-primary {
     width: 100%;
-    backgroundColor: #00449E;
+    background-color: #00449E;
     color: white;
     padding: 10px;
     border: none;
-    borderRadius: 4px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .btn-primary:hover {
-    backgroundColor: #003077;
+    background-color: #003077;
 }
