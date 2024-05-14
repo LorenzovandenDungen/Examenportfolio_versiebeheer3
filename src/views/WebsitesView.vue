@@ -12,30 +12,36 @@
         <h2 class="my-3">Vergelijk Pakketten</h2>
         <div class="row">
           <div class="col-md-4" v-for="(pkg, index) in comparisonPackages" :key="index">
-            <PackageCard :pkg="pkg" @remove="removeComparison" isComparison />
+            <PackageCard :pkg="pkg" @remove="removeComparison" :isComparison="true" />
           </div>
         </div>
       </div>
     </div>
-    <PaymentForm :selectedMethod="selectedMethod" :paymentDetails="paymentDetails" @submit="processPayment" @selectMethod="selectMethod" :errorMessage="errorMessage" />
+    <PaymentForm
+      :selectedMethod="selectedMethod"
+      :paymentDetails="paymentDetails"
+      @submit="processPayment"
+      @selectMethod="selectMethod"
+      :errorMessage="errorMessage"
+    />
   </div>
 </template>
 
 <script>
-import PackageCard from '@/components/PackageCard.vue'
-import PaymentForm from '@/components/PaymentForm.vue'
+import PackageCard from '@/components/PackageCard.vue';
+import PaymentForm from '@/components/PaymentForm.vue';
 
 export default {
   components: {
     PackageCard,
-    PaymentForm
+    PaymentForm,
   },
   data() {
     return {
       packages: [
         { name: 'Basic', description: 'Een eenvoudig pakket voor starters', price: 100 },
         { name: 'Standard', description: 'Een standaard pakket met meer functies', price: 200 },
-        { name: 'Premium', description: 'Een uitgebreid pakket voor gevorderden', price: 300 }
+        { name: 'Premium', description: 'Een uitgebreid pakket voor gevorderden', price: 300 },
       ],
       comparisonPackages: [],
       selectedMethod: 'card',
@@ -44,9 +50,9 @@ export default {
         expiryDate: '',
         cvv: '',
         country: '',
-        postalCode: ''
+        postalCode: '',
       },
-      errorMessage: ''
+      errorMessage: '',
     };
   },
   methods: {
@@ -55,8 +61,8 @@ export default {
         this.comparisonPackages.push(pkg);
       }
     },
-    removeComparison(index) {
-      this.comparisonPackages.splice(index, 1);
+    removeComparison(pkg) {
+      this.comparisonPackages = this.comparisonPackages.filter((item) => item !== pkg);
     },
     selectMethod(method) {
       this.selectedMethod = method;
@@ -79,8 +85,8 @@ export default {
           else reject('Payment failed');
         }, 1000);
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

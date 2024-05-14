@@ -52,9 +52,24 @@
   <script>
   export default {
     props: {
-      selectedMethod: String,
-      paymentDetails: Object,
-      errorMessage: String
+      selectedMethod: {
+        type: String,
+        default: 'card'
+      },
+      paymentDetails: {
+        type: Object,
+        default: () => ({
+          cardNumber: '',
+          expiryDate: '',
+          cvv: '',
+          country: '',
+          postalCode: ''
+        })
+      },
+      errorMessage: {
+        type: String,
+        default: ''
+      }
     },
     methods: {
       submit() {
