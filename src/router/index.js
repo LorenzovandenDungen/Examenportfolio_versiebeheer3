@@ -4,8 +4,8 @@ import TarievenView from '@/views/TarievenView.vue';
 import OfferteView from '@/views/OfferteView.vue';
 import ContactView from '@/views/ContactView.vue';
 import WebsitesView from '@/views/WebsitesView.vue';
-import PaymentView from '@/views/PaymentView.vue'; // Nieuwe import toegevoegd voor de PaymentView
-import UserDashboard from '@/views/UserDashboard.vue'; // Nieuwe import toegevoegd voor de UserDashboard
+import PaymentView from '@/views/PaymentView.vue';
+import UserDashboard from '@/views/UserDashboard.vue'; // Import UserDashboard
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
@@ -13,8 +13,8 @@ const routes = [
   { path: '/offerte', name: 'offerte', component: OfferteView },
   { path: '/contact', name: 'contact', component: ContactView },
   { path: '/websites', name: 'websites', component: WebsitesView },
-  { path: '/betalen', name: 'betalen', component: PaymentView }, // Nieuwe route toegevoegd voor de betaalpagina
-  { path: '/dashboard', name: 'dashboard', component: UserDashboard } // Nieuwe route toegevoegd voor de UserDashboard
+  { path: '/betalen', name: 'betalen', component: PaymentView },
+  { path: '/dashboard', name: 'dashboard', component: UserDashboard } // Add UserDashboard route
 ];
 
 const router = createRouter({
