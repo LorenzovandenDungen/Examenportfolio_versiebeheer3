@@ -94,10 +94,4 @@ export default {
 .payment-form {
   margin-top: 20px;
 }
-.payment-methods .btn {
-  margin-right: 10px;
-}
-.form-group {
-  margin-bottom: 15px;
-}
 </style>
