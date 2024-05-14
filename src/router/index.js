@@ -5,7 +5,7 @@ import OfferteView from '@/views/OfferteView.vue';
 import ContactView from '@/views/ContactView.vue';
 import WebsitesView from '@/views/WebsitesView.vue';
 import PaymentView from '@/views/PaymentView.vue';
-import UserDashboard from '@/views/UserDashboard.vue'; // Import UserDashboard
+import UserDashboard from '@/views/UserDashboard.vue';
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
@@ -14,7 +14,7 @@ const routes = [
   { path: '/contact', name: 'contact', component: ContactView },
   { path: '/websites', name: 'websites', component: WebsitesView },
   { path: '/betalen', name: 'betalen', component: PaymentView },
-  { path: '/dashboard', name: 'dashboard', component: UserDashboard } // Add UserDashboard route
+  { path: '/dashboard', name: 'dashboard', component: UserDashboard }
 ];
 
 const router = createRouter({
