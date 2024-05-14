@@ -2,8 +2,7 @@ import './assets/main.css'
 
 // Import Bootstrap CSS and optionally JS
 import 'bootstrap/dist/css/bootstrap.min.css'
-// If you plan to use Bootstrap's JavaScript components (like modals or dropdowns), uncomment the next line
-// import 'bootstrap'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js' // Importing Bootstrap JS for components like modals or dropdowns
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
