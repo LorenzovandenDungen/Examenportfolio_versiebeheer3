@@ -24,10 +24,10 @@
               <router-link class="nav-link" to="/offerte">Offerte</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/dashboard">Dashboard</router-link> <!-- New link for the dashboard -->
+              <router-link class="nav-link" to="/dashboard">Dashboard</router-link> 
             </li>
           </ul>
-          <!-- Assuming the login and sign-up are outside the collapsible menu and always visible -->
+
           <router-link class="nav-link login-button" to="/login">Login</router-link>
           <router-link class="nav-link signup-button" to="/signup">Sign-up</router-link>
         </div>
