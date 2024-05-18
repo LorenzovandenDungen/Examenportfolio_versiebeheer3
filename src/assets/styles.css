@@ -393,3 +393,36 @@ button[type="submit"]:hover {
 .btn-primary:hover {
     background-color: #003077;
 }
+
+/* Media Queries */
+@media (min-width: 576px) {
+    .main-banner {
+        min-height: 300px;
+    }
+
+    .image-block {
+        height: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: 40px;
+    }
+
+    .price-box {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 992px) {
+    .content {
+        padding: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .price-container {
+        max-width: 1400px;
+    }
+}
