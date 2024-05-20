@@ -14,27 +14,12 @@
     </header>
     <main class="text-center py-20">
       <section class="hero">
-        <h1 class="text-5xl font-bold mb-4">Betaling</h1>
-        <p class="text-xl mb-8">Vul het onderstaande formulier in om te betalen</p>
-        <form class="max-w-md mx-auto">
-          <div class="mb-4">
-            <label class="block text-left">Naam</label>
-            <input type="text" class="w-full p-2 rounded text-black"/>
-          </div>
-          <div class="mb-4">
-            <label class="block text-left">Creditcardnummer</label>
-            <input type="text" class="w-full p-2 rounded text-black"/>
-          </div>
-          <div class="mb-4">
-            <label class="block text-left">Vervaldatum</label>
-            <input type="text" class="w-full p-2 rounded text-black"/>
-          </div>
-          <div class="mb-4">
-            <label class="block text-left">CVV</label>
-            <input type="text" class="w-full p-2 rounded text-black"/>
-          </div>
-          <button type="submit" class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Betalen</button>
-        </form>
+        <h1 class="text-5xl font-bold mb-4">Betalen</h1>
+        <p class="text-xl mb-8">Betaal voor onze diensten gemakkelijk en snel!</p>
+        <div class="flex justify-center space-x-4">
+          <router-link to="/contact" class="bg-gray-700 py-2 px-6 rounded hover:bg-gray-600">Contact</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-6 rounded hover:from-purple-600 hover:to-blue-600">Vraag offerte aan</router-link>
+        </div>
       </section>
     </main>
   </div>
@@ -47,5 +32,5 @@ export default {
 </script>
 
 <style>
-/* Custom styles if needed */
+/* Add any custom styles here if needed */
 </style>
