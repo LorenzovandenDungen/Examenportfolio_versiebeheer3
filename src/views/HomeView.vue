@@ -17,8 +17,8 @@
         <h1 class="text-5xl font-bold mb-4">Website laten maken?</h1>
         <p class="text-xl mb-8">Dat kan!</p>
         <div class="flex justify-center space-x-4">
-          <button class="bg-gray-700 py-2 px-6 rounded hover:bg-gray-600">Contact</button>
-          <button class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-6 rounded hover:from-purple-600 hover:to-blue-600">Vraag offerte aan</button>
+          <router-link to="/contact" class="bg-gray-700 py-2 px-6 rounded hover:bg-gray-600">Contact</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-6 rounded hover:from-purple-600 hover:to-blue-600">Vraag offerte aan</router-link>
         </div>
       </section>
       <section class="mt-20">
