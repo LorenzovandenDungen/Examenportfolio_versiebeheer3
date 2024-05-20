@@ -13,7 +13,7 @@
       </nav>
     </header>
     <main class="text-center py-20">
-      <section class="hero">
+      <section class="hero mb-12">
         <h1 class="text-5xl font-bold mb-4">Website laten maken?</h1>
         <p class="text-xl mb-8">Dat kan!</p>
         <div class="flex justify-center space-x-4">
