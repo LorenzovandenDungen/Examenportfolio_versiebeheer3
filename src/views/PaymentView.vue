@@ -12,14 +12,35 @@
         </ul>
       </nav>
     </header>
-    <main class="text-center py-20">
-      <section class="hero">
+    <main class="flex flex-col items-center py-20 px-4 sm:px-8 lg:px-16">
+      <section class="text-center mb-12">
         <h1 class="text-5xl font-bold mb-4">Betalen</h1>
-        <p class="text-xl mb-8">Betaal voor onze diensten gemakkelijk en snel!</p>
-        <div class="flex justify-center space-x-4">
-          <router-link to="/contact" class="bg-gray-700 py-2 px-6 rounded hover:bg-gray-600">Contact</router-link>
-          <router-link to="/offerte" class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-6 rounded hover:from-purple-600 hover:to-blue-600">Vraag offerte aan</router-link>
-        </div>
+        <p class="text-xl mb-8">Vul je betalingsgegevens in om door te gaan met de bestelling.</p>
+      </section>
+      <section class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-lg">
+        <form @submit.prevent="handleSubmit" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Naam op de kaart</label>
+            <input id="name" name="name" type="text" autocomplete="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+          </div>
+          <div>
+            <label for="card-number" class="block text-sm font-medium text-gray-700">Kaartnummer</label>
+            <input id="card-number" name="card-number" type="text" autocomplete="cc-number" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+          </div>
+          <div class="flex space-x-4">
+            <div class="w-1/2">
+              <label for="expiry-date" class="block text-sm font-medium text-gray-700">Vervaldatum</label>
+              <input id="expiry-date" name="expiry-date" type="text" placeholder="MM/YY" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+            <div class="w-1/2">
+              <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
+              <input id="cvc" name="cvc" type="text" autocomplete="cc-csc" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Betaling Verzenden</button>
+          </div>
+        </form>
       </section>
     </main>
   </div>
@@ -28,6 +49,12 @@
 <script>
 export default {
   name: 'PaymentView',
+  methods: {
+    handleSubmit() {
+      // Add form submission logic here
+      alert('Betaling verzonden!');
+    },
+  },
 }
 </script>
 
