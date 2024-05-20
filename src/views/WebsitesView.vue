@@ -12,19 +12,55 @@
         </ul>
       </nav>
     </header>
-    <main class="text-center py-20 px-4 sm:px-8 lg:px-16">
-      <section class="hero mb-12">
-        <h1 class="text-5xl font-bold mb-4">Website Pakketten</h1>
-        <p class="text-xl mb-8">Blader door onze verschillende websitepakketten en vergelijk ze om de juiste keuze te maken.</p>
+    <main class="py-20 px-4 sm:px-8 lg:px-16">
+      <section class="text-center mb-12">
+        <h1 class="text-5xl font-bold mb-4">Website laten maken</h1>
+        <p class="text-xl">Nu voor maar eenmalig €649,-!</p>
       </section>
-      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div v-for="(packageItem, index) in packages" :key="index" class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 class="text-xl font-bold mb-4">{{ packageItem.name }}</h2>
-          <p class="text-4xl font-bold text-orange-500 mb-4">{{ packageItem.price }}</p>
-          <ul class="text-left mb-4">
-            <li v-for="(feature, fIndex) in packageItem.features" :key="fIndex" class="mb-2">{{ feature }}</li>
-          </ul>
-          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
+      <section class="flex flex-col md:flex-row items-center mb-12">
+        <div class="md:w-1/2 p-4">
+          <img src="https://via.placeholder.com/400x300" alt="Website design" class="rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-1/2 p-4 text-left">
+          <h2 class="text-3xl font-bold mb-4">Ontvang binnen 2 werkdagen al een eerste ontwerp!</h2>
+          <p class="mb-4">Wilt u een website laten maken? Lorenzo helpt u graag bij het maken van een nieuwe website. Alle websites die wij maken zijn gebruiksvriendelijk, mobiel vriendelijk en zoekmachine vriendelijk. Uw website is hét uithangbord van uw bedrijf en daarom moet de ontwikkeling hiervan goed en professioneel worden gedaan.</p>
+          <p class="mb-4">Alle websites die wij maken worden gemaakt met het CMS Wordpress. Wordpress is een relatief eenvoudig programma (CMS) waarmee websites kunnen worden gemaakt. Het is erg visueel ingericht en onderscheidt zich op gebruiksgemak. Wordpress is het meest gebruikte CMS ter wereld.</p>
+          <p class="mb-4">Na oplevering van de website kunt dan ook zelf heel eenvoudig teksten en/of foto's wijzigen zonder technische kennis. Mocht u er zelf niet uit kunnen komen of er geen tijd voor hebben dan wijzigt Lorenzo GRATIS teksten en/of foto's voor u na oplevering van de website.</p>
+          <router-link to="/over-ons" class="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">Over Lorenzo</router-link>
+        </div>
+      </section>
+      <section class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-8">Website laten maken in 4 simpele stappen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="https://via.placeholder.com/100" alt="Stap 1" class="mx-auto">
+            </div>
+            <h3 class="text-xl font-bold mb-4">Website aanvragen €649,-</h3>
+            <p>Vul online ons aanvraag formulier in. Op werkdagen binnen 1 uur ontvangt u al een antwoord.</p>
+            <router-link to="/aanvragen" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 mt-4 inline-block">Website aanvragen</router-link>
+          </div>
+          <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="https://via.placeholder.com/100" alt="Stap 2" class="mx-auto">
+            </div>
+            <h3 class="text-xl font-bold mb-4">Contact over uw wensen en eisen</h3>
+            <p>Tijdens kort (telefonisch, WhatsApp of per mail) contact kunt u al uw wensen en eisen kenbaar maken.</p>
+          </div>
+          <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="https://via.placeholder.com/100" alt="Stap 3" class="mx-auto">
+            </div>
+            <h3 class="text-xl font-bold mb-4">Eerste ontwerp</h3>
+            <p>Nadat uw wensen en eisen kenbaar heeft gemaakt wordt er gestart met het maken van een eerste ontwerp. Dit duurt 2 werkdagen en nadat deze klaar is kunt u via een speciale link deze bekijken en helemaal testen.</p>
+          </div>
+          <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="https://via.placeholder.com/100" alt="Stap 4" class="mx-auto">
+            </div>
+            <h3 class="text-xl font-bold mb-4">100% tevredenheidsgarantie</h3>
+            <p>Na het eerste ontwerp kunt u aangeven wat u er van vindt en wordt de website net zo lang aangepast totdat u er helemaal 100% tevreden mee bent. Wanneer de website dan helemaal klaar is en u bent er helemaal tevreden mee zorgen wij ervoor dat deze online wordt gezet.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -33,69 +69,7 @@
 
 <script>
 export default {
-  name: 'WebsitesView',
-  data() {
-    return {
-      packages: [
-        {
-          name: 'Budget',
-          price: '€595',
-          features: [
-            'Nieuw design',
-            '1 pagina – Onepager',
-            '100% jouw eigendom',
-            'Domeinnaam',
-            'WordPress CMS',
-            'Gratis stock foto\'s',
-            'Google statistieken',
-            'Aanmelding Google',
-          ],
-        },
-        {
-          name: 'Standard',
-          price: '€895',
-          features: [
-            'Nieuw design',
-            '5 pagina\'s gevuld',
-            '100% jouw eigendom',
-            'Domeinnaam',
-            'WordPress CMS',
-            'Gratis stock foto\'s',
-            'Google statistieken',
-            'Aanmelding Google',
-          ],
-        },
-        {
-          name: 'Silver',
-          price: '€1195',
-          features: [
-            'Nieuw design',
-            '10 pagina\'s gevuld',
-            '100% jouw eigendom',
-            'Domeinnaam',
-            'WordPress CMS',
-            'Gratis stock foto\'s',
-            'Google statistieken',
-            'Aanmelding Google',
-          ],
-        },
-        {
-          name: 'Webshop',
-          price: '€1895',
-          features: [
-            'Nieuw design',
-            'Online betalen',
-            '100% jouw eigendom',
-            'iDeal, Bancontact & meer',
-            'WordPress CMS',
-            'WooCommerce',
-            'Gratis stock foto\'s',
-            'Google statistieken',
-          ],
-        },
-      ],
-    };
-  },
+  name: 'WebsitesView'
 }
 </script>
 
