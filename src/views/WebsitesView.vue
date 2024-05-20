@@ -1,103 +1,36 @@
 <template>
-  <div class="container websites-view">
-    <h1 class="my-4">Websites</h1>
-    <div class="package-catalog mb-4">
-      <h2 class="my-3">Kies uw websitepakket</h2>
-      <div class="row">
-        <div class="col-md-4" v-for="(pkg, index) in packages" :key="index">
-          <PackageCard :pkg="pkg" @compare="comparePackage" />
+  <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
+    <header class="flex justify-between items-center p-6">
+      <div class="logo text-2xl font-bold">Lorenzo</div>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
+          <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
+          <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
+          <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
+          <li><router-link to="/offerte" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Offerte</router-link></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="text-center py-20">
+      <section class="hero">
+        <h1 class="text-5xl font-bold mb-4">Websites</h1>
+        <p class="text-xl mb-8">Bekijk onze websites!</p>
+        <div class="flex justify-center space-x-4">
+          <button class="bg-gray-700 py-2 px-6 rounded hover:bg-gray-600">Contact</button>
+          <button class="bg-gradient-to-r from-purple-500 to-blue-500 py-2 px-6 rounded hover:from-purple-600 hover:to-blue-600">Vraag offerte aan</button>
         </div>
-      </div>
-      <div v-if="comparisonPackages.length > 0" class="comparison-section my-4">
-        <h2 class="my-3">Vergelijk Pakketten</h2>
-        <div class="row">
-          <div class="col-md-4" v-for="(pkg, index) in comparisonPackages" :key="index">
-            <PackageCard :pkg="pkg" @remove="removeComparison" :isComparison="true" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <PaymentForm
-      :selectedMethod="selectedMethod"
-      :paymentDetails="paymentDetails"
-      @submit="processPayment"
-      @selectMethod="selectMethod"
-      :errorMessage="errorMessage"
-    />
+      </section>
+    </main>
   </div>
 </template>
 
 <script>
-import PackageCard from '@/components/PackageCard.vue';
-import PaymentForm from '@/components/PaymentForm.vue';
-
 export default {
-  components: {
-    PackageCard,
-    PaymentForm,
-  },
-  data() {
-    return {
-      packages: [
-        { name: 'Basic', description: 'Een eenvoudig pakket voor starters', price: 100 },
-        { name: 'Standard', description: 'Een standaard pakket met meer functies', price: 200 },
-        { name: 'Premium', description: 'Een uitgebreid pakket voor gevorderden', price: 300 },
-      ],
-      comparisonPackages: [],
-      selectedMethod: 'card',
-      paymentDetails: {
-        cardNumber: '',
-        expiryDate: '',
-        cvv: '',
-        country: '',
-        postalCode: '',
-      },
-      errorMessage: '',
-    };
-  },
-  methods: {
-    comparePackage(pkg) {
-      if (!this.comparisonPackages.includes(pkg)) {
-        this.comparisonPackages.push(pkg);
-      }
-    },
-    removeComparison(pkg) {
-      this.comparisonPackages = this.comparisonPackages.filter((item) => item !== pkg);
-    },
-    selectMethod(method) {
-      this.selectedMethod = method;
-    },
-    async processPayment() {
-      this.errorMessage = '';
-      try {
-        await this.mockApiCall(this.paymentDetails);
-        alert('Payment processed successfully for ' + this.selectedMethod);
-      } catch (error) {
-        console.error('Payment processing error:', error);
-        this.errorMessage = 'There was an error processing your payment. Please try again.';
-      }
-    },
-    async mockApiCall(details) {
-      // Simulate API call
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (Math.random() > 0.5) resolve('Success');
-          else reject('Payment failed');
-        }, 1000);
-      });
-    },
-  },
-};
+  name: 'WebsitesView',
+}
 </script>
 
-<style scoped>
-.websites-view {
-  padding: 20px;
-}
-.package-catalog {
-  margin-bottom: 20px;
-}
-.payment-form {
-  margin-top: 20px;
-}
+<style>
+/* Add any custom styles here if needed */
 </style>
