@@ -18,7 +18,7 @@
         <p class="text-xl mb-8">Bekijk onze tarieven voor verschillende diensten!</p>
       </section>
       <section class="price-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
-        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Budget</h2>
           <p class="text-4xl font-bold text-orange-500 mb-4">€595</p>
           <ul class="text-left mb-4">
@@ -31,9 +31,9 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded">Nu aanvragen!</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Standard</h2>
           <p class="text-4xl font-bold text-orange-500 mb-4">€895</p>
           <ul class="text-left mb-4">
@@ -46,9 +46,9 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded">Nu aanvragen!</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Silver</h2>
           <p class="text-4xl font-bold text-orange-500 mb-4">€1195</p>
           <ul class="text-left mb-4">
@@ -61,9 +61,9 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded">Nu aanvragen!</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-md">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Webshop</h2>
           <p class="text-4xl font-bold text-orange-500 mb-4">€1895</p>
           <ul class="text-left mb-4">
@@ -76,7 +76,7 @@
             <li class="mb-2">Gratis stock foto's</li>
             <li class="mb-2">Google statistieken</li>
           </ul>
-          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded">Nu aanvragen!</router-link>
+          <router-link to="/offerte" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
       </section>
     </main>
