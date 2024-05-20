@@ -31,7 +31,7 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/payment" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
+          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
         <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Standard</h2>
@@ -46,7 +46,7 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/payment" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
+          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
         <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Silver</h2>
@@ -61,7 +61,7 @@
             <li class="mb-2">Google statistieken</li>
             <li class="mb-2">Aanmelding Google</li>
           </ul>
-          <router-link to="/payment" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
+          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
         <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Webshop</h2>
@@ -76,7 +76,7 @@
             <li class="mb-2">Gratis stock foto's</li>
             <li class="mb-2">Google statistieken</li>
           </ul>
-          <router-link to="/payment" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
+          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
         </div>
       </section>
     </main>
