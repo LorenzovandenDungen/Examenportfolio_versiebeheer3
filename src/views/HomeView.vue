@@ -19,7 +19,7 @@
         <button>Klik hier</button>
       </section>
       <section class="image-section">
-        <img src="@/assets/landing_page_image.jpg" alt="Hero Image">
+        <img src="@/assets/landing_page_image.png" alt="Hero Image">
       </section>
       <section class="testimonials">
         <h2>Heading</h2>
