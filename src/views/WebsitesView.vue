@@ -1,9 +1,9 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex justify-between items-center p-6">
-      <div class="logo text-2xl font-bold">Lorenzo</div>
+    <header class="flex flex-col md:flex-row justify-between items-center p-6">
+      <div class="logo text-2xl font-bold mb-4 md:mb-0">Lorenzo</div>
       <nav>
-        <ul class="flex space-x-4">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
           <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
           <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
@@ -14,15 +14,15 @@
     </header>
     <main class="py-20 px-4 sm:px-8 lg:px-16">
       <section class="text-center mb-12">
-        <h1 class="text-5xl font-bold mb-4">Website laten maken</h1>
-        <p class="text-xl">Nu voor maar eenmalig €649,-!</p>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Website laten maken</h1>
+        <p class="text-lg sm:text-xl">Nu voor maar eenmalig €649,-!</p>
       </section>
       <section class="flex flex-col md:flex-row items-center mb-12">
         <div class="md:w-1/2 p-4">
-          <img src="https://img.freepik.com/free-photo/rpa-concept-with-blurry-hand-touching-screen_23-2149311914.jpg?w=1380&t=st=1716226552~exp=1716227152~hmac=c6d74d9fe03430911f331a0177179a1ef5efdd617036b9290672557d309f6f59" alt="Website design" class="rounded-lg shadow-lg">
+          <img src="https://img.freepik.com/free-photo/rpa-concept-with-blurry-hand-touching-screen_23-2149311914.jpg?w=1380&t=st=1716226552~exp=1716227152~hmac=c6d74d9fe03430911f331a0177179a1ef5efdd617036b9290672557d309f6f59" alt="Website design" class="rounded-lg shadow-lg w-full">
         </div>
         <div class="md:w-1/2 p-4 text-left">
-          <h2 class="text-3xl font-bold mb-4">Ontvang binnen 2 werkdagen al een eerste ontwerp!</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold mb-4">Ontvang binnen 2 werkdagen al een eerste ontwerp!</h2>
           <p class="mb-4">Wilt u een website laten maken? Lorenzo helpt u graag bij het maken van een nieuwe website. Alle websites die wij maken zijn gebruiksvriendelijk, mobiel vriendelijk en zoekmachine vriendelijk. Uw website is hét uithangbord van uw bedrijf en daarom moet de ontwikkeling hiervan goed en professioneel worden gedaan.</p>
           <p class="mb-4">Alle websites die wij maken worden gemaakt met het CMS Wordpress. Wordpress is een relatief eenvoudig programma (CMS) waarmee websites kunnen worden gemaakt. Het is erg visueel ingericht en onderscheidt zich op gebruiksgemak. Wordpress is het meest gebruikte CMS ter wereld.</p>
           <p class="mb-4">Na oplevering van de website kunt dan ook zelf heel eenvoudig teksten en/of foto's wijzigen zonder technische kennis. Mocht u er zelf niet uit kunnen komen of er geen tijd voor hebben dan wijzigt Lorenzo GRATIS teksten en/of foto's voor u na oplevering van de website.</p>
@@ -30,8 +30,8 @@
         </div>
       </section>
       <section class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-8">Website laten maken in 4 simpele stappen</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8">Website laten maken in 4 simpele stappen</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="bg-white text-black p-6 rounded-lg shadow-lg">
             <div class="mb-4 flex justify-center">
               <img src="https://img.freepik.com/free-photo/robot-handshake-human-background-futuristic-digital-age_53876-129770.jpg?w=1380&t=st=1716226651~exp=1716227251~hmac=4aec62d45d0d117906ea0a125c45584a67533d3ac1f31d0e2e15d53776a44370" alt="Stap 1" class="w-48 h-48 object-cover">
