@@ -26,7 +26,7 @@
           <p class="mb-4">Wilt u een website laten maken? Lorenzo helpt u graag bij het maken van een nieuwe website. Alle websites die wij maken zijn gebruiksvriendelijk, mobiel vriendelijk en zoekmachine vriendelijk. Uw website is hét uithangbord van uw bedrijf en daarom moet de ontwikkeling hiervan goed en professioneel worden gedaan.</p>
           <p class="mb-4">Alle websites die wij maken worden gemaakt met het CMS Wordpress. Wordpress is een relatief eenvoudig programma (CMS) waarmee websites kunnen worden gemaakt. Het is erg visueel ingericht en onderscheidt zich op gebruiksgemak. Wordpress is het meest gebruikte CMS ter wereld.</p>
           <p class="mb-4">Na oplevering van de website kunt dan ook zelf heel eenvoudig teksten en/of foto's wijzigen zonder technische kennis. Mocht u er zelf niet uit kunnen komen of er geen tijd voor hebben dan wijzigt Lorenzo GRATIS teksten en/of foto's voor u na oplevering van de website.</p>
-          <router-link to="/over-ons" class="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">Over Lorenzo</router-link>
+          <router-link to="/" class="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">Over Lorenzo</router-link>
         </div>
       </section>
       <section class="text-center mb-12">
