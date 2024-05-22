@@ -22,10 +22,10 @@
         </div>
       </section>
       <section class="mt-20">
-        <div class="bg-gradient-to-r from-purple-500 to-blue-500 rounded-full w-64 h-64 mx-auto flex items-center justify-center">
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500 rounded-full w-64 h-64 mx-auto flex items-center justify-center p-6 overflow-hidden">
           <div class="text-center">
             <h2 class="text-xl font-bold">About me</h2>
-            <p class="text-sm">Mijn naam is Lorenzo</p>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit dolore perferendis modi atque. Vero at reprehenderit dolorem quod, saepe, ratione velit non exercitationem voluptatibus libero rerum esse impedit consequatur quibusdam!</p>
           </div>
         </div>
       </section>
