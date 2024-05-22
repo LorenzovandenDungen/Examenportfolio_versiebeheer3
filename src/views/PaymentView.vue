@@ -1,9 +1,9 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex justify-between items-center p-6">
+    <header class="flex flex-col sm:flex-row justify-between items-center p-6">
       <div class="logo text-2xl font-bold">Lorenzo</div>
       <nav>
-        <ul class="flex space-x-4">
+        <ul class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
           <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
           <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
