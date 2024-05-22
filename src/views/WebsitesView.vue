@@ -38,7 +38,7 @@
             </div>
             <h3 class="text-xl font-bold mb-4">Website aanvragen €649,-</h3>
             <p>Vul online ons aanvraag formulier in. Op werkdagen binnen 1 uur ontvangt u al een antwoord.</p>
-            <router-link to="/aanvragen" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 mt-4 inline-block">Website aanvragen</router-link>
+            <router-link to="/offerte" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 mt-4 inline-block">Website aanvragen</router-link>
           </div>
           <div class="bg-white text-black p-6 rounded-lg shadow-lg">
             <div class="mb-4 flex justify-center">
