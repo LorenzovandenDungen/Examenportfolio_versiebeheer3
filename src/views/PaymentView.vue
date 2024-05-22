@@ -27,19 +27,17 @@
             <label for="card-number" class="block text-sm font-medium text-gray-700">Kaartnummer</label>
             <input id="card-number" name="card-number" type="text" autocomplete="cc-number" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
           </div>
-          <div class="flex space-x-4">
-            <div class="w-1/2">
-              <label for="expiry-date" class="block text-sm font-medium text-gray-700">Vervaldatum</label>
-              <input id="expiry-date" name="expiry-date" type="text" placeholder="MM/YY" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+          <div class="flex flex-col sm:flex-row sm:space-x-4">
+            <div class="sm:flex-1">
+              <label for="expiry" class="block text-sm font-medium text-gray-700">Vervaldatum</label>
+              <input id="expiry" name="expiry" type="text" autocomplete="cc-exp" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
             </div>
-            <div class="w-1/2">
+            <div class="sm:flex-1">
               <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
               <input id="cvc" name="cvc" type="text" autocomplete="cc-csc" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
             </div>
           </div>
-          <div>
-            <button type="submit" class="w-full bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Betaling Verzenden</button>
-          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Betalen</button>
         </form>
       </section>
     </main>
@@ -51,13 +49,12 @@ export default {
   name: 'PaymentView',
   methods: {
     handleSubmit() {
-      // Add form submission logic here
-      alert('Betaling verzonden!');
-    },
-  },
+      // Handle the form submission
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
 /* Add any custom styles here if needed */
 </style>

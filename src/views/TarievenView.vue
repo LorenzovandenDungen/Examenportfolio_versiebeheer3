@@ -1,9 +1,9 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex justify-between items-center p-6">
-      <div class="logo text-2xl font-bold">Lorenzo</div>
+    <header class="flex flex-col md:flex-row justify-between items-center p-6">
+      <div class="logo text-2xl font-bold mb-4 md:mb-0">Lorenzo</div>
       <nav>
-        <ul class="flex space-x-4">
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
           <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
           <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
@@ -12,12 +12,12 @@
         </ul>
       </nav>
     </header>
-    <main class="text-center py-20">
+    <main class="text-center py-20 px-4 sm:px-8 lg:px-16">
       <section class="hero mb-12">
-        <h1 class="text-5xl font-bold mb-4">Tarieven</h1>
-        <p class="text-xl mb-8">Bekijk onze tarieven voor verschillende diensten!</p>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Tarieven</h1>
+        <p class="text-lg sm:text-xl mb-8">Bekijk onze tarieven voor verschillende diensten!</p>
       </section>
-      <section class="price-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
+      <section class="price-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
           <h2 class="text-xl font-bold mb-4">Budget</h2>
           <p class="text-4xl font-bold text-orange-500 mb-4">€595</p>
@@ -89,6 +89,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Add any custom styles here if needed */
 </style>
