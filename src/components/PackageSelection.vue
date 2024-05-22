@@ -1,15 +1,17 @@
 <template>
-  <div class="package-selection">
-    <h1>Kies uw Websitepakket</h1>
-    <div class="packages">
-      <div class="package" v-for="pkg in packages" :key="pkg.id">
-        <h2>{{ pkg.name }}</h2>
-        <p>{{ pkg.description }}</p>
-        <p><strong>Prijs: </strong>{{ pkg.price }}</p>
-        <button @click="toggleSelection(pkg)">{{ isSelected(pkg) ? 'Deselecteer' : 'Selecteer' }}</button>
+  <div class="package-selection p-4 sm:p-6">
+    <h1 class="text-2xl font-bold mb-6">Kies uw Websitepakket</h1>
+    <div class="packages flex flex-col sm:flex-row flex-wrap justify-center">
+      <div class="package border border-gray-300 p-4 m-2 rounded w-full sm:w-1/3 text-center" v-for="pkg in packages" :key="pkg.id">
+        <h2 class="text-xl font-bold mb-2">{{ pkg.name }}</h2>
+        <p class="mb-2">{{ pkg.description }}</p>
+        <p class="font-bold mb-4">Prijs: {{ pkg.price }}</p>
+        <button @click="toggleSelection(pkg)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full">
+          {{ isSelected(pkg) ? 'Deselecteer' : 'Selecteer' }}
+        </button>
       </div>
     </div>
-    <button v-if="selectedPackages.length > 1" @click="comparePackages">Vergelijk</button>
+    <button v-if="selectedPackages.length > 1" @click="comparePackages" class="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Vergelijk</button>
   </div>
 </template>
 
@@ -46,21 +48,5 @@ export default {
 </script>
 
 <style scoped>
-.package-selection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.packages {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.package {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 10px;
-  width: 30%;
-  text-align: center;
-}
+/* Add any custom styles here if needed */
 </style>
