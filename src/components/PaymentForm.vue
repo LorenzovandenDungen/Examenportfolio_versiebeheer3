@@ -1,92 +1,49 @@
 <template>
-  <form @submit.prevent="submit">
-    <h2 class="my-3">Veilig Betalen</h2>
-    <div class="btn-group mb-3" role="group" aria-label="Payment methods">
-      <button type="button" class="btn btn-outline-primary" @click="selectMethod('card')" :class="{ active: selectedMethod === 'card' }">Card</button>
-      <button type="button" class="btn btn-outline-primary" @click="selectMethod('ideal')" :class="{ active: selectedMethod === 'ideal' }">iDEAL</button>
-      <button type="button" class="btn btn-outline-primary" @click="selectMethod('paypal')" :class="{ active: selectedMethod === 'paypal' }">PayPal</button>
-    </div>
-    <div v-if="selectedMethod === 'card'">
-      <div class="form-group">
-        <label for="cardNumber">Creditcardnummer</label>
-        <input type="text" id="cardNumber" class="form-control" v-model="paymentDetails.cardNumber" placeholder="1234 1234 1234 1234" required>
+  <div class="p-4 sm:p-6">
+    <h2 class="text-2xl font-bold mb-4">Payment Information</h2>
+    <form @submit.prevent="submitPayment">
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-bold mb-2">Name on Card</label>
+        <input type="text" id="name" v-model="name" class="w-full p-2 border border-gray-300 rounded">
       </div>
-      <div class="form-group">
-        <label for="expiryDate">Vervaldatum</label>
-        <input type="text" id="expiryDate" class="form-control" v-model="paymentDetails.expiryDate" placeholder="MM / JJ" required>
+      <div class="mb-4">
+        <label for="cardNumber" class="block text-sm font-bold mb-2">Card Number</label>
+        <input type="text" id="cardNumber" v-model="cardNumber" class="w-full p-2 border border-gray-300 rounded">
       </div>
-      <div class="form-group">
-        <label for="cvv">CVC</label>
-        <input type="text" id="cvv" class="form-control" v-model="paymentDetails.cvv" placeholder="CVC" required>
+      <div class="flex flex-col sm:flex-row justify-between mb-4">
+        <div class="mb-4 sm:mb-0 sm:mr-2">
+          <label for="expiry" class="block text-sm font-bold mb-2">Expiry Date</label>
+          <input type="text" id="expiry" v-model="expiry" class="w-full p-2 border border-gray-300 rounded">
+        </div>
+        <div class="sm:ml-2">
+          <label for="cvv" class="block text-sm font-bold mb-2">CVV</label>
+          <input type="text" id="cvv" v-model="cvv" class="w-full p-2 border border-gray-300 rounded">
+        </div>
       </div>
-    </div>
-    <div v-if="selectedMethod === 'ideal'">
-      <!-- iDEAL specific fields -->
-      <p>iDEAL Payment Selected</p>
-    </div>
-    <div v-if="selectedMethod === 'paypal'">
-      <!-- PayPal specific fields -->
-      <p>PayPal Payment Selected</p>
-    </div>
-    <div class="form-group">
-      <label for="country">Country</label>
-      <select id="country" class="form-control" v-model="paymentDetails.country">
-        <option>United States</option>
-        <option>Netherlands</option>
-        <option>Belgium</option>
-        <option>Germany</option>
-        <!-- Add more countries as needed -->
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="postalCode">Postal code</label>
-      <input type="text" id="postalCode" class="form-control" v-model="paymentDetails.postalCode" placeholder="90210" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Betalen</button>
-    <div v-if="errorMessage" class="alert alert-danger mt-3">
-      {{ errorMessage }}
-    </div>
-  </form>
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full sm:w-auto">Submit Payment</button>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
-  props: {
-    selectedMethod: {
-      type: String,
-      default: 'card'
-    },
-    paymentDetails: {
-      type: Object,
-      default: () => ({
-        cardNumber: '',
-        expiryDate: '',
-        cvv: '',
-        country: '',
-        postalCode: ''
-      })
-    },
-    errorMessage: {
-      type: String,
-      default: ''
+  name: 'PaymentForm',
+  data() {
+    return {
+      name: '',
+      cardNumber: '',
+      expiry: '',
+      cvv: ''
     }
   },
   methods: {
-    submit() {
-      this.$emit('submit');
-    },
-    selectMethod(method) {
-      this.$emit('selectMethod', method);
+    submitPayment() {
+      // Payment submission logic
     }
   }
-};
+}
 </script>
 
 <style scoped>
-.form-group {
-  margin-bottom: 15px;
-}
-.alert {
-  margin-top: 10px;
-}
+/* Add any custom styles here if needed */
 </style>

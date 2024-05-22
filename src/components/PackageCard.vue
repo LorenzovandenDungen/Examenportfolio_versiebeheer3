@@ -1,30 +1,23 @@
 <template>
-    <div class="card mb-4">
-      <div class="card-body">
-        <h3 class="card-title">{{ pkg.name }}</h3>
-        <p class="card-text">{{ pkg.description }}</p>
-        <p class="card-text"><strong>Kosten:</strong> {{ pkg.price }} EUR</p>
-        <button v-if="!isComparison" class="btn btn-secondary" @click="$emit('compare', pkg)">Vergelijk</button>
-        <button v-if="isComparison" class="btn btn-danger" @click="$emit('remove', pkg)">Verwijder</button>
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      pkg: Object,
-      isComparison: {
-        type: Boolean,
-        default: false
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .card {
-    margin-bottom: 20px;
+  <div class="bg-white text-black p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
+    <img :src="image" alt="Package Image" class="w-32 h-32 sm:w-48 sm:h-48 object-cover mb-4">
+    <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
+    <p class="mb-4">{{ description }}</p>
+    <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Select Package</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PackageCard',
+  props: {
+    image: String,
+    title: String,
+    description: String
   }
-  </style>
-  
+}
+</script>
+
+<style scoped>
+/* Add any custom styles here if needed */
+</style>
