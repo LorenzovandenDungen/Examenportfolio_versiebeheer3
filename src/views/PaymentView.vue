@@ -209,7 +209,7 @@ export default {
     async processPayment(token) {
       try {
         // Verstuur de betalingstoken naar de backend voor verwerking
-        const response = await fetch('/api/process-payment', {
+        const response = await fetch('http://localhost:8000/api/process-payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
