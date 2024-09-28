@@ -1,13 +1,22 @@
 <template>
+  <!-- Hoofdcontainer met een achtergrondverloop en minimale hoogte van het scherm -->
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
+    <!-- Header met logo en navigatie -->
     <header class="flex flex-col sm:flex-row justify-between items-center p-6">
+      <!-- Logo -->
       <div class="logo text-2xl font-bold">Lorenzo</div>
+      <!-- Navigatie -->
       <nav>
         <ul class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <!-- Navigatielink naar Home -->
           <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
+          <!-- Navigatielink naar Websites -->
           <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
+          <!-- Navigatielink naar Tarieven -->
           <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
+          <!-- Navigatielink naar Contact -->
           <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
+          <!-- Navigatielink naar Offerte -->
           <li>
             <router-link
               to="/offerte"
@@ -19,13 +28,18 @@
         </ul>
       </nav>
     </header>
+    <!-- Hoofdinhoud met een sectie voor de betalingsinformatie -->
     <main class="flex flex-col items-center py-20 px-4 sm:px-8 lg:px-16">
+      <!-- Sectie met titel en beschrijving -->
       <section class="text-center mb-12">
         <h1 class="text-5xl font-bold mb-4">Betalen</h1>
         <p class="text-xl mb-8">Vul je betalingsgegevens in om door te gaan met de bestelling.</p>
       </section>
+      <!-- Formuliersectie met een witte achtergrond en schaduw -->
       <section class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-lg">
+        <!-- Formulier voor betalingsgegevens -->
         <form @submit.prevent="handleSubmit" class="space-y-6">
+          <!-- Betaalmethode selectievak -->
           <div>
             <label for="payment-method" class="block text-sm font-medium text-gray-700"
               >Betaalmethode</label
@@ -39,6 +53,7 @@
               <option value="ideal">iDEAL</option>
             </select>
           </div>
+          <!-- Creditcardgegevens invoervelden -->
           <div v-if="paymentMethod === 'card'">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700"
@@ -93,6 +108,7 @@
               </div>
             </div>
           </div>
+          <!-- iDEAL bank selectievak -->
           <div v-if="paymentMethod === 'ideal'">
             <div>
               <label for="ideal-bank" class="block text-sm font-medium text-gray-700"
@@ -117,6 +133,7 @@
               </select>
             </div>
           </div>
+          <!-- Betaalknop -->
           <button
             type="submit"
             class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600"
@@ -136,20 +153,23 @@ export default {
   name: 'PaymentView',
   data() {
     return {
-      stripe: null,
-      paymentMethod: 'card',
-      cardNumber: '',
-      expiryDate: '',
-      cvc: '',
-      idealBank: ''
+      stripe: null, // Stripe object voor het verwerken van betalingen
+      paymentMethod: 'card', // Standaard betaalmethode is creditcard
+      cardNumber: '', // Creditcardnummer
+      expiryDate: '', // Vervaldatum van de creditcard
+      cvc: '', // CVC-code van de creditcard
+      idealBank: '' // Geselecteerde bank voor iDEAL betalingen
     }
   },
   async mounted() {
+    // Laad de Stripe object met de public key
     this.stripe = await loadStripe('your-publishable-key')
   },
   methods: {
     async handleSubmit() {
+      // Verwerk de betaling op basis van de geselecteerde betaalmethode
       if (this.paymentMethod === 'card') {
+        // Verwerk creditcardbetaling
         const { token, error } = await this.stripe.createToken({
           number: this.cardNumber,
           exp_month: this.expiryDate.split('/')[0],
@@ -163,9 +183,10 @@ export default {
           this.processPayment(token)
         }
       } else if (this.paymentMethod === 'ideal') {
+        // Verwerk iDEAL betaling
         const { source, error } = await this.stripe.createSource({
           type: 'ideal',
-          amount: 1099, // Amount in cents
+          amount: 1099, // Bedrag in centen
           currency: 'eur',
           owner: {
             name: 'Jenny Rosen'
@@ -187,6 +208,7 @@ export default {
     },
     async processPayment(token) {
       try {
+        // Verstuur de betalingstoken naar de backend voor verwerking
         const response = await fetch('/api/process-payment', {
           method: 'POST',
           headers: {
@@ -197,9 +219,9 @@ export default {
 
         const result = await response.json()
         if (result.success) {
-          alert('Payment successful!')
+          alert('Betaling succesvol!')
         } else {
-          alert('Payment failed!')
+          alert('Betaling mislukt!')
         }
       } catch (error) {
         console.error(error)
