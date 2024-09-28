@@ -163,27 +163,32 @@ export default {
   },
   async mounted() {
     // Laad de Stripe object met de public key
-    this.stripe = await loadStripe('your-publishable-key')
+    this.stripe = await loadStripe(
+      'pk_test_51Q3zaHFalZJgi3VaOveAi4eS9WTFYYHOty6hRAu7KBRfjSBkMP38wN6ZtMvTffKjpMqe1ZzvEECYVZjlXb8WcOAQ00VpZ6mta3'
+    )
   },
   methods: {
     async handleSubmit() {
-      // Verwerk de betaling op basis van de geselecteerde betaalmethode
       if (this.paymentMethod === 'card') {
-        // Verwerk creditcardbetaling
-        const { token, error } = await this.stripe.createToken({
-          number: this.cardNumber,
-          exp_month: this.expiryDate.split('/')[0],
-          exp_year: this.expiryDate.split('/')[1],
-          cvc: this.cvc
+        // Maak een betaalmethode voor de creditcard
+        const { paymentMethod, error } = await this.stripe.createPaymentMethod({
+          type: 'card',
+          card: {
+            number: this.cardNumber,
+            exp_month: this.expiryDate.split('/')[0],
+            exp_year: this.expiryDate.split('/')[1],
+            cvc: this.cvc
+          }
         })
 
         if (error) {
           console.error(error)
+          alert('Er is een fout opgetreden bij het verwerken van de betaling.')
         } else {
-          this.processPayment(token)
+          this.processPayment(paymentMethod.id)
         }
       } else if (this.paymentMethod === 'ideal') {
-        // Verwerk iDEAL betaling
+        // Maak een bron voor iDEAL betaling
         const { source, error } = await this.stripe.createSource({
           type: 'ideal',
           amount: 1099, // Bedrag in centen
@@ -201,20 +206,21 @@ export default {
 
         if (error) {
           console.error(error)
+          alert('Er is een fout opgetreden bij het verwerken van de betaling.')
         } else {
           window.location.href = source.redirect.url
         }
       }
     },
-    async processPayment(token) {
+    async processPayment(paymentMethodId) {
       try {
-        // Verstuur de betalingstoken naar de backend voor verwerking
+        // Verstuur de betaalmethode ID naar de backend voor verwerking
         const response = await fetch('http://localhost:8000/api/process-payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ token })
+          body: JSON.stringify({ payment_method_id: paymentMethodId })
         })
 
         const result = await response.json()
@@ -225,6 +231,7 @@ export default {
         }
       } catch (error) {
         console.error(error)
+        alert('Er is een fout opgetreden bij het verwerken van de betaling.')
       }
     }
   }
