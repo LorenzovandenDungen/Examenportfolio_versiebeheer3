@@ -1,24 +1,6 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex flex-col md:flex-row justify-between items-center p-6">
-      <div class="logo text-2xl font-bold mb-4 md:mb-0">Lorenzo</div>
-      <nav>
-        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-          <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
-          <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
-          <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
-          <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
-          <li>
-            <router-link
-              to="/offerte"
-              class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600"
-            >
-              Offerte
-            </router-link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header /> <!-- Voeg hier de header component toe -->
     <main class="flex flex-col items-center py-20 px-4 sm:px-8 lg:px-16">
       <section class="text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold mb-4">Login</h1>
@@ -59,9 +41,15 @@
     </main>
   </div>
 </template>
+
 <script>
+import Header from '@/components/header/Header.vue'; // Zorg ervoor dat het pad klopt
+
 export default {
   name: 'LoginView',
+  components: {
+    Header // Registreer de Header component
+  },
   data() {
     return {
       email: '',
@@ -70,15 +58,16 @@ export default {
   },
   methods: {
     handleSubmit() {
-      // Replace this with your actual login logic
+      // Vervang dit met je eigen login logica
       console.log('Email:', this.email)
       console.log('Password:', this.password)
-      // Example: Redirect to another page
+      // Voorbeeld: Redirect naar een andere pagina
       // this.$router.push('/dashboard');
     }
   }
 }
 </script>
+
 <style scoped>
-/* No need to add scoped styles as we are using the same styles as other pages */
+/* Geen nood om scoped stijlen toe te voegen, aangezien we dezelfde stijlen gebruiken als andere pagina's */
 </style>

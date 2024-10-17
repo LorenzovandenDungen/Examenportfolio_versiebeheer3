@@ -1,17 +1,8 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex justify-between items-center p-6">
-      <div class="logo text-2xl font-bold">Lorenzo</div>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
-          <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
-          <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
-          <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
-          <li><router-link to="/offerte" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Offerte</router-link></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Gebruik de geïmporteerde Header component -->
+    <Header /> <!-- Voeg hier de header component toe -->
+
     <main class="text-center py-20">
       <section class="hero">
         <h1 class="text-5xl font-bold mb-4">Dashboard</h1>
@@ -26,11 +17,16 @@
 </template>
 
 <script>
+import Header from '@/components/header/Header.vue'; // Zorg ervoor dat het pad klopt
+
 export default {
   name: 'UserDashboard',
+  components: {
+    Header // Registreer de Header component
+  }
 }
 </script>
 
 <style>
-/* Add any custom styles here if needed */
+/* Voeg hier eventuele aangepaste stijlen toe als dat nodig is */
 </style>

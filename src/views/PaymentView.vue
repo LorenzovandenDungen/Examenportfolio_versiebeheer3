@@ -1,24 +1,7 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <header class="flex flex-col sm:flex-row justify-between items-center p-6">
-      <div class="logo text-2xl font-bold">Lorenzo</div>
-      <nav>
-        <ul class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
-          <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
-          <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
-          <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
-          <li>
-            <router-link
-              to="/offerte"
-              class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600"
-            >
-              Offerte
-            </router-link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Gebruik de geïmporteerde Header component -->
+    <Header /> <!-- Voeg hier de header component toe -->
 
     <main class="flex flex-col items-center py-20 px-4 sm:px-8 lg:px-16">
       <section class="text-center mb-12">
@@ -29,9 +12,7 @@
       <section class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-lg">
         <form @submit.prevent="handleSubmit" class="space-y-6">
           <div>
-            <label for="payment-method" class="block text-sm font-medium text-gray-700"
-              >Betaalmethode</label
-            >
+            <label for="payment-method" class="block text-sm font-medium text-gray-700">Betaalmethode</label>
             <select
               v-model="paymentMethod"
               id="payment-method"
@@ -44,9 +25,7 @@
 
           <div v-if="paymentMethod === 'card'">
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700"
-                >Naam op de kaart</label
-              >
+              <label for="name" class="block text-sm font-medium text-gray-700">Naam op de kaart</label>
               <input
                 id="name"
                 name="name"
@@ -57,9 +36,7 @@
               />
             </div>
             <div>
-              <label for="card-element" class="block text-sm font-medium text-gray-700"
-                >Kaartnummer</label
-              >
+              <label for="card-element" class="block text-sm font-medium text-gray-700">Kaartnummer</label>
               <div
                 id="card-element"
                 class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
@@ -69,9 +46,7 @@
 
           <div v-if="paymentMethod === 'ideal'">
             <div>
-              <label for="ideal-bank" class="block text-sm font-medium text-gray-700"
-                >Kies je bank</label
-              >
+              <label for="ideal-bank" class="block text-sm font-medium text-gray-700">Kies je bank</label>
               <select
                 id="ideal-bank"
                 v-model="idealBank"
@@ -106,9 +81,13 @@
 
 <script>
 import { loadStripe } from '@stripe/stripe-js'
+import Header from '@/components/header/Header.vue'; // Zorg ervoor dat het pad klopt
 
 export default {
   name: 'PaymentView',
+  components: {
+    Header // Registreer de Header component
+  },
   data() {
     return {
       stripe: null,
@@ -120,9 +99,7 @@ export default {
     }
   },
   async mounted() {
-    this.stripe = await loadStripe(
-      'pk_test_51Q3zaHFalZJgi3VaOveAi4eS9WTFYYHOty6hRAu7KBRfjSBkMP38wN6ZtMvTffKjpMqe1ZzvEECYVZjlXb8WcOAQ00VpZ6mta3'
-    )
+    this.stripe = await loadStripe('pk_test_51Q3zaHFalZJgi3VaOveAi4eS9WTFYYHOty6hRAu7KBRfjSBkMP38wN6ZtMvTffKjpMqe1ZzvEECYVZjlXb8WcOAQ00VpZ6mta3')
     this.elements = this.stripe.elements()
     this.cardElement = this.elements.create('card')
     this.cardElement.mount('#card-element')
