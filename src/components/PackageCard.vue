@@ -1,15 +1,15 @@
-<!-- src/components/PackageCard.vue -->
 <template>
-  <div class="package-card bg-white text-black p-6 rounded-lg shadow-md">
-    <img :src="package.image" alt="Package Image" class="w-full h-40 object-cover mb-4" v-if="package.image"/>
-    <h3 class="text-2xl font-bold mb-2">{{ package.title }}</h3>
-    <p class="text-xl mb-4">{{ package.price }}</p>
+  <div class="package-card bg-white text-black p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+    <h3 class="text-2xl font-bold mb-2 text-center">{{ package.title }}</h3>
+    <p class="text-3xl font-semibold mb-4 text-center text-orange-500">{{ package.price }}</p>
     <ul class="mb-4 text-left">
       <li v-for="(feature, index) in package.features" :key="index" class="text-sm mb-2">
         • {{ feature }}
       </li>
     </ul>
-    <router-link :to="package.link" class="btn-primary">Selecteer</router-link>
+    <router-link :to="package.link" class="btn-primary w-full text-center py-2 mt-4 block rounded">
+      Nu aanvragen!
+    </router-link>
   </div>
 </template>
 
@@ -35,6 +35,6 @@ export default {
 
 <style scoped>
 .btn-primary {
-  @apply bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition;
+  @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white transition duration-300 hover:shadow-lg;
 }
 </style>
