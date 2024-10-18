@@ -7,6 +7,7 @@ import WebsitesView from '@/views/WebsitesView.vue'
 import PaymentView from '@/views/PaymentView.vue'
 import UserDashboard from '@/views/UserDashboard.vue'
 import LoginView from '@/views/LoginView.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
