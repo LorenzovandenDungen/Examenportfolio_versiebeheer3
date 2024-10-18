@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
     <!-- Gebruik de geïmporteerde Header component -->
-    <Header /> <!-- Voeg hier de header component toe -->
+    <Header />
 
     <main class="text-center py-20 px-4 sm:px-8 lg:px-16">
       <!-- Hoofdinhoud van de pagina met gecentreerde tekst en padding die varieert per schermgrootte -->
@@ -12,68 +12,19 @@
         <p class="text-lg sm:text-xl mb-8">Bekijk onze tarieven voor verschillende diensten!</p>
         <!-- Onderkop met iets grotere tekst op kleine schermen -->
       </section>
+      
+      <!-- Sectie met prijscards, grid layout; aantal kolommen verandert met schermgrootte -->
       <section class="price-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Sectie met prijscards, grid layout; aantal kolommen verandert met schermgrootte -->
-        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 class="text-xl font-bold mb-4">Budget</h2>
-          <p class="text-4xl font-bold text-orange-500 mb-4">€595</p>
-          <ul class="text-left mb-4">
-            <li class="mb-2">Nieuw design</li>
-            <li class="mb-2">1 pagina – Onepager</li>
-            <li class="mb-2">100% jouw eigendom</li>
-            <li class="mb-2">Domeinnaam</li>
-            <li class="mb-2">WordPress CMS</li>
-            <li class="mb-2">Gratis stock foto's</li>
-            <li class="mb-2">Google statistieken</li>
-            <li class="mb-2">Aanmelding Google</li>
-          </ul>
-          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
-        </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 class="text-xl font-bold mb-4">Standard</h2>
-          <p class="text-4xl font-bold text-orange-500 mb-4">€895</p>
-          <ul class="text-left mb-4">
-            <li class="mb-2">Nieuw design</li>
-            <li class="mb-2">5 pagina's gevuld</li>
-            <li class="mb-2">100% jouw eigendom</li>
-            <li class="mb-2">Domeinnaam</li>
-            <li class="mb-2">WordPress CMS</li>
-            <li class="mb-2">Gratis stock foto's</li>
-            <li class="mb-2">Google statistieken</li>
-            <li class="mb-2">Aanmelding Google</li>
-          </ul>
-          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
-        </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 class="text-xl font-bold mb-4">Silver</h2>
-          <p class="text-4xl font-bold text-orange-500 mb-4">€1195</p>
-          <ul class="text-left mb-4">
-            <li class="mb-2">Nieuw design</li>
-            <li class="mb-2">10 pagina's gevuld</li>
-            <li class="mb-2">100% jouw eigendom</li>
-            <li class="mb-2">Domeinnaam</li>
-            <li class="mb-2">WordPress CMS</li>
-            <li class="mb-2">Gratis stock foto's</li>
-            <li class="mb-2">Google statistieken</li>
-            <li class="mb-2">Aanmelding Google</li>
-          </ul>
-          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
-        </div>
-        <div class="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h2 class="text-xl font-bold mb-4">Webshop</h2>
-          <p class="text-4xl font-bold text-orange-500 mb-4">€1895</p>
-          <ul class="text-left mb-4">
-            <li class="mb-2">Nieuw design</li>
-            <li class="mb-2">Online betalen</li>
-            <li class="mb-2">100% jouw eigendom</li>
-            <li class="mb-2">iDeal, Bancontact & meer</li>
-            <li class="mb-2">WordPress CMS</li>
-            <li class="mb-2">WooCommerce</li>
-            <li class="mb-2">Gratis stock foto's</li>
-            <li class="mb-2">Google statistieken</li>
-          </ul>
-          <router-link to="/betalen" class="bg-gradient-to-r from-blue-900 to-purple-900 text-white py-2 px-4 rounded hover:bg-blue-800">Nu aanvragen!</router-link>
-        </div>
+        <!-- Gebruik het PackageCard component voor elk pakket -->
+        <PackageCard
+          v-for="(packageItem, index) in packages"
+          :key="index"
+          :title="packageItem.title"
+          :price="packageItem.price"
+          :features="packageItem.features"
+          :link="packageItem.link"
+          :image="packageItem.image"
+        />
       </section>
     </main>
   </div>
@@ -81,16 +32,87 @@
 
 <script>
 import Header from '@/components/header/Header.vue'; // Zorg ervoor dat het pad klopt
+import PackageCard from '@/components/PackageCard.vue'; // Importeer het PackageCard component
 
 export default {
   name: 'TarievenView', // Naam van de Vue-component
   components: {
-    Header // Registreer de Header component
+    Header, // Registreer de Header component
+    PackageCard // Registreer de PackageCard component
+  },
+  data() {
+    return {
+      packages: [
+        {
+          title: 'Budget',
+          price: '€595',
+          features: [
+            'Nieuw design',
+            '1 pagina – Onepager',
+            '100% jouw eigendom',
+            'Domeinnaam',
+            'WordPress CMS',
+            'Gratis stock foto',
+            'Google statistieken',
+            'Aanmelding Google'
+          ],
+          link: '/betalen',
+          image: '' // Voeg een afbeeldings-URL toe als je een afbeelding wilt weergeven
+        },
+        {
+          title: 'Standard',
+          price: '€895',
+          features: [
+            'Nieuw design',
+            '5 pagina\'s gevuld',
+            '100% jouw eigendom',
+            'Domeinnaam',
+            'WordPress CMS',
+            'Gratis stock foto',
+            'Google statistieken',
+            'Aanmelding Google'
+          ],
+          link: '/betalen',
+          image: '' // Voeg een afbeeldings-URL toe als je een afbeelding wilt weergeven
+        },
+        {
+          title: 'Silver',
+          price: '€1195',
+          features: [
+            'Nieuw design',
+            '10 pagina\'s gevuld',
+            '100% jouw eigendom',
+            'Domeinnaam',
+            'WordPress CMS',
+            'Gratis stock foto',
+            'Google statistieken',
+            'Aanmelding Google'
+          ],
+          link: '/betalen',
+          image: '' // Voeg een afbeeldings-URL toe als je een afbeelding wilt weergeven
+        },
+        {
+          title: 'Webshop',
+          price: '€1895',
+          features: [
+            'Nieuw design',
+            'Online betalen',
+            '100% jouw eigendom',
+            'iDeal, Bancontact & meer',
+            'WordPress CMS',
+            'WooCommerce',
+            'Gratis stock foto',
+            'Google statistieken'
+          ],
+          link: '/betalen',
+          image: '' // Voeg een afbeeldings-URL toe als je een afbeelding wilt weergeven
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style scoped>
-/* Voeg hier eventuele aangepaste stijlen toe als dat nodig is */
-/* 'scoped' zorgt ervoor dat deze CSS alleen van toepassing is op dit component */
+/* Voeg hier eventuele aangepaste stijlen toe indien nodig */
 </style>
