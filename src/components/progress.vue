@@ -1,42 +1,36 @@
 <template>
-    <div class="progress">
-      <h2>Project Voortgang</h2>
+  <div class="progress">
+      <h3>Voortgang</h3>
       <ul>
-        <li v-for="item in progress" :key="item.id">
-          {{ item.task }}: {{ item.status }}
-        </li>
+          <li v-for="item in progress" :key="item.id">
+              {{ item.status }} - {{ item.created_at }}
+          </li>
       </ul>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Progress',
-    data() {
-      return {
-        progress: [],
+  </div>
+</template>
+
+<script>
+import { ref, onMounted } from 'vue';
+import api from '../api/axios';
+
+export default {
+  setup() {
+      const progress = ref([]);
+
+      const fetchProgress = async () => {
+          try {
+              const response = await api.get('/progress-statuses');
+              progress.value = response.data;
+          } catch (error) {
+              console.error(error);
+          }
       };
-    },
-    created() {
-      this.fetchProgress();
-    },
-    methods: {
-      async fetchProgress() {
-        try {
-          const response = await fetch('/api/progress');
-          const data = await response.json();
-          this.progress = data;
-        } catch (error) {
-          console.error('Error fetching progress:', error);
-        }
-      },
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .progress {
-    margin: 20px;
-  }
-  </style>
-  
+
+      onMounted(() => {
+          fetchProgress();
+      });
+
+      return { progress };
+  },
+};
+</script>

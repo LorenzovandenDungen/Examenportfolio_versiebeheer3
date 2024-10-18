@@ -1,3 +1,4 @@
+<!-- src/views/TarievenView.vue -->
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
     <!-- Gebruik de geïmporteerde Header component -->
@@ -19,11 +20,8 @@
         <PackageCard
           v-for="(packageItem, index) in packages"
           :key="index"
-          :title="packageItem.title"
-          :price="packageItem.price"
-          :features="packageItem.features"
-          :link="packageItem.link"
-          :image="packageItem.image"
+          :package="packageItem"
+          @select-package="handleSelectPackage"
         />
       </section>
     </main>
@@ -108,6 +106,14 @@ export default {
           image: '' // Voeg een afbeeldings-URL toe als je een afbeelding wilt weergeven
         }
       ]
+    }
+  },
+  methods: {
+    handleSelectPackage(selectedPackage) {
+      console.log('Geselecteerd pakket:', selectedPackage);
+      // Voeg hier logica toe voor wat er moet gebeuren bij het selecteren van een pakket
+      // Bijvoorbeeld: router push naar het betaalpagina met de geselecteerde pakket
+      this.$router.push({ path: selectedPackage.link, query: { packageName: selectedPackage.title } });
     }
   }
 }
