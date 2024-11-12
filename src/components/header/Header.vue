@@ -8,7 +8,8 @@
           <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
           <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
           <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
-          <li><router-link to="login" class="hover:text-gray-300 mb-4">Login</router-link></li>
+          <li><router-link to="login" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Login</router-link></li>
+          
           <li>
             <router-link
               to="/offerte"

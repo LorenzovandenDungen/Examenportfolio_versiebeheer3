@@ -1,47 +1,68 @@
 <template>
-  <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <Header /> <!-- Voeg hier de header component toe -->
-    <main class="flex flex-col items-center py-20 px-4 sm:px-8 lg:px-16">
-      <section class="text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Login</h1>
-        <p class="text-lg sm:text-xl mb-8">
-          Welcome back! Please enter your credentials to log in.
-        </p>
-      </section>
-      <section class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-lg">
-        <form @submit.prevent="handleSubmit" class="space-y-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
-            <input
-              type="email"
-              id="email"
-              v-model="email"
-              required
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
-            <input
-              type="password"
-              id="password"
-              v-model="password"
-              required
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600"
-          >
-            Login
-          </button>
-        </form>
-      </section>
-    </main>
-  </div>
-</template>
+  <div class="bg-gradient-to-br from-[#1f1c47] to-[#3b3b98] min-h-screen flex flex-col">
+    <Header
+    class="text-white p-4 w-full" 
+    />
+    <div class="flex items-center justify-center flex-grow">
+    <div class="bg-white/10 backdrop-blur-lg p-10 w-80 rounded-lg shadow-lg text-center text-white">
+      <!-- Avatar -->
+      <div class="flex justify-center mb-6">
+        <div class="bg-gray-400/50 rounded-full h-20 w-20 flex items-center justify-center">
+          <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+      </div>
 
+      <!-- Form -->
+      <form @submit.prevent="handleLogin">
+        <!-- Email Input -->
+        <div class="mb-4 text-left">
+          <label for="email" class="block text-sm font-medium">Email ID</label>
+          <input 
+            v-model="email" 
+            type="email" 
+            id="email" 
+            class="w-full p-2 mt-1 rounded bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+            placeholder="Email ID" 
+            required
+          />
+        </div>
+
+        <!-- Password Input -->
+        <div class="mb-4 text-left">
+          <label for="password" class="block text-sm font-medium">Password</label>
+          <input 
+            v-model="password" 
+            type="password" 
+            id="password" 
+            class="w-full p-2 mt-1 rounded bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+            placeholder="Password" 
+            required
+          />
+        </div>
+
+        <!-- Options -->
+        <div class="flex justify-between items-center text-sm text-gray-300 mb-6">
+          <label class="flex items-center">
+            <input 
+              v-model="rememberMe" 
+              type="checkbox" 
+              class="mr-2 rounded bg-white/20 focus:ring-0"
+            /> Remember me
+          </label>
+          <a href="#" class="hover:underline">Forgot Password?</a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="w-full py-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded font-semibold hover:from-purple-600 hover:to-indigo-500 transition duration-300">
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</template>
 <script>
 import Header from '@/components/header/Header.vue'; // Zorg ervoor dat het pad klopt
 
