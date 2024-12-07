@@ -77,6 +77,5 @@ export default {
 </script>
 
 <style scoped>
-/* Voeg hier eventuele aangepaste stijlen toe als dat nodig is */
-/* 'scoped' zorgt ervoor dat deze CSS alleen van toepassing is op dit component */
+
 </style>

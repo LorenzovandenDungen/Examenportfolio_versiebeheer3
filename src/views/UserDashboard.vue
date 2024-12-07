@@ -1,7 +1,6 @@
 <template>
   <div class="bg-gradient-to-r from-blue-900 to-purple-900 min-h-screen text-white">
-    <!-- Gebruik de geïmporteerde Header component -->
-    <Header /> <!-- Voeg hier de header component toe -->
+    <Header /> 
 
     <main class="text-center py-20">
       <section class="hero">
