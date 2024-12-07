@@ -1,3 +1,4 @@
+<!-- src\views\RegisterView.vue -->
 <template>
     <div class="bg-gradient-to-br from-[#1f1c47] to-[#3b3b98] min-h-screen flex flex-col">
       <Header class="text-white p-4 w-full" />
