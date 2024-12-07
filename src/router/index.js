@@ -7,6 +7,7 @@ import WebsitesView from '@/views/WebsitesView.vue'
 import PaymentView from '@/views/PaymentView.vue'
 import UserDashboard from '@/views/UserDashboard.vue'
 import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
@@ -16,7 +17,8 @@ const routes = [
   { path: '/websites', name: 'websites', component: WebsitesView },
   { path: '/betalen', name: 'betalen', component: PaymentView },
   { path: '/dashboard', name: 'dashboard', component: UserDashboard },
-  { path: '/login', name: 'login', component: LoginView }
+  { path: '/login', name: 'login', component: LoginView },
+  { path: '/register', name: 'register', component: RegisterView } 
 ]
 
 const router = createRouter({
