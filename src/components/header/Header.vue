@@ -5,19 +5,21 @@
       <nav>
         <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <li><router-link to="/" class="hover:text-gray-300">Home</router-link></li>
-          <li><router-link to="/websites" class="hover:text-gray-300">Websites</router-link></li>
-          <li><router-link to="/tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
-          <li><router-link to="/contact" class="hover:text-gray-300">Contact</router-link></li>
+          <li><router-link to="websites" class="hover:text-gray-300">Websites</router-link></li>
+          <li><router-link to="tarieven" class="hover:text-gray-300">Tarieven</router-link></li>
+          <li><router-link to="contact" class="hover:text-gray-300">Contact</router-link></li>
+          <li><router-link to="offerte" class="hover:text-gray-300">Offerte</router-link></li>
           <li><router-link to="login" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Login</router-link></li>
+          <li><router-link to="register" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600">Registeren</router-link></li>
           
-          <li>
+          <!-- <li>
             <router-link
               to="/offerte"
               class="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded hover:from-purple-600 hover:to-blue-600"
             >
               Offerte
             </router-link>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </header>
