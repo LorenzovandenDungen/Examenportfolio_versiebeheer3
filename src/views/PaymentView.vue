@@ -16,7 +16,7 @@
             <select
               v-model="paymentMethod"
               id="payment-method"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              class="mt-1 block w-full px-3 py-2 border-2 border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             >
               <option value="card">Creditcard</option>
               <option value="ideal">iDEAL</option>
@@ -32,14 +32,14 @@
                 type="text"
                 autocomplete="name"
                 required
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                class="mt-1 block w-full px-3 py-2 border-2 border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               />
             </div>
             <div>
               <label for="card-element" class="block text-sm font-medium text-gray-700">Kaartnummer</label>
               <div
                 id="card-element"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+                class="mt-1 block w-full px-3 py-2 border-2 border-gray-400 rounded-md shadow-sm"
               ></div>
             </div>
           </div>
